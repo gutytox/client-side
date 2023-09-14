@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link rel="stylesheet" href="sop.css">
+  <script>
+    function manipulateDOM() {
+
+      var iframe = document.getElementById("meli");
+      var elmnt = iframe.contentWindow.document.getElementsByTagName("H1")[0];
+      elmnt.style.display = "none";
+    }
+
+    function readRecurso() {
+      url = "https://www.mercadolibre.com.ar/robots.txt"
+      fetch(url, { method: 'GET' }).then(response =>
+        response.json()).then(function (data) {
+          console.log(data)
+        });
+    }
+
+    function loadScript() {
+      const url = "https://s3.eu-central-1.amazonaws.com/public-secure-cookie.io/PrintSecureCookie.js"
+      const script = document.createElement("script");
+      script.src = url;
+      document.body.appendChild(script);
+    }
+
+    function loadImage() {
+      const url = "https://http2.mlstatic.com/resources/frontend/statics/loyal/partners/nivel-6/vdp-header/o:f_webp/quantumania_@2x.jpg";
+      const div = document.getElementById("load-image");
+      const img = new Image();
+      img.src = url;
+      div.appendChild(img);
+    }
+
+    function sendFormSimple() {
+      url = "https://prueba.requestcatcher.com/admin"
+      fetch(url, { method: 'POST',  body: "WarFare 2023 #:)"  }).then(response =>
+        response.text()).then(function (data) {
+          console.log(data)
+        });
+    }
+
+    function sendFormPreflight() {
+      url = "https://warfare2023.requestcatcher.com/admin"
+      fetch(url, { method: 'PUT', body: "WarFare 2023 #:)" }).then(response =>
+        response.text()).then(function (data) {
+          console.log(data)
+        });
+    }
+
+    function sendForm() {
+      const form = document.createElement("form");
+      form.action = "https://warfare2023.requestcatcher.com/";
+      form.method = "POST";
+    
+      // Agregar un campo de texto
+      const inputNombre = document.createElement("input");
+      inputNombre.type = "text";
+      inputNombre.name = "evento";
+      inputNombre.value = "Warfare 2023 :)";
+      form.appendChild(inputNombre);
+
+      document.body.appendChild(form)
+
+      // Enviar el formulario
+      form.submit();
+    }
+
+  </script>
+</head>
+
+<body>
+
+  <div class="marquee">
+    <marquee behavior="scroll" direction="left">Workshop Client Side Attacks</marquee><br>
+  </div>
+
+  <button class="button-3" role="button" onclick="manipulateDOM()">#1 - Manipular el DOM</button>
+  <button class="button-3" role="button" onclick="readRecurso()">#2 - Leer un Recurso</button>
+  <button class="button-3" role="button" onclick="loadImage()">#3 - Cargar un Recurso</button>
+  <button class="button-3" role="button" onclick="loadScript()">#4 - Cargar un Script</button>
+  <button class="button-3" role="button" onclick="sendForm()">#5 - Formulario</button>
+  <button class="button-3" role="button" onclick="sendFormSimple()">#6 - Form Simple</button>
+  <button class="button-3" role="button" onclick="sendFormPreflight()">#7 - Form Complejo</button>
+  <br>
+
+  <div class="juanito">
+    <div id="load-image">
+
+    </div>
+    <div class="iframe-container">
+      <iframe id="meli" src="https://www.mercadolibre.com.ar"></iframe>
+    </div>
+  </div>
+
+
+
+
+</body>
+
+</html>
